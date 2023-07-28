@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key});
+  const CustomNoteItem({super.key, required this.note});
 
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,7 +18,7 @@ class CustomNoteItem extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -24,15 +26,15 @@ class CustomNoteItem extends StatelessWidget {
           children: [
             ListTile(
               contentPadding: const EdgeInsets.all(24),
-              title: const Text(
-                'Flutter Tips',
-                style: TextStyle(color: Colors.black, fontSize: 26),
+              title: Text(
+                note.title,
+                style: const TextStyle(color: Colors.black, fontSize: 26),
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.only(top: 16),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 16),
                 child: Text(
-                  'build your career with me',
-                  style: TextStyle(color: Colors.black45, fontSize: 16),
+                  note.content,
+                  style: const TextStyle(color: Colors.black45, fontSize: 16),
                 ),
               ),
               trailing: IconButton(
@@ -44,11 +46,11 @@ class CustomNoteItem extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 24, right: 24),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 24, right: 24),
               child: Text(
-                'May 21, 2022 ,',
-                style: TextStyle(color: Colors.black45),
+                note.date.substring(0, 10),
+                style: const TextStyle(color: Colors.black45),
               ),
             ),
           ],

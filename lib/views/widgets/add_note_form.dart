@@ -49,7 +49,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-
                     BlocProvider.of<AddNoteCubit>(context).addNote(NoteModel(
                         title: title!,
                         content: content!,
