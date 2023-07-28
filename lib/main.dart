@@ -14,7 +14,6 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
 
   runApp(const NotesApp());
-  Hive.box(kNotesBox).clear();
 }
 
 class NotesApp extends StatelessWidget {
