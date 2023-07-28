@@ -43,13 +43,15 @@ class CustomNoteItem extends StatelessWidget {
                   color: Colors.black,
                   size: 40,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 24, right: 24),
               child: Text(
-                note.date.substring(0, 10),
+                note.date,
                 style: const TextStyle(color: Colors.black45),
               ),
             ),
