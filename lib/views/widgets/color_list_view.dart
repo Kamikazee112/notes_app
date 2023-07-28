@@ -15,11 +15,11 @@ class _ColorsListViewState extends State<ColorsListView> {
   int currentIndex = 0;
 
   List<Color> colors = const [
-    Color(0xFF22577A),
-    Color(0xFF38A3A5),
-    Color(0xFF57CC99),
-    Color(0xFF80ED99),
-    Color(0xFFC7F9CC),
+    Color(0xFFFFAEBC),
+    Color(0xFFA0E7E5),
+    Color(0xFFB4F8C8),
+    Color(0xFFFBE7C6),
+    Color(0xFFFFA384),
   ];
   @override
   Widget build(BuildContext context) {
